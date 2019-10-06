@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         val products = arrayListOf<Product>()
 
         for (i in 0..100){
-            products.add(Product("Organic Apple", "http://via.placeholder.com/350/ffff00/ff0000", 1.99))
+            products.add(Product("Organic Apple", "https://images.unsplash.com/photo-1508138221679-760a23a2285b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80", 1.99))
         }
 
         rv_items.apply{
