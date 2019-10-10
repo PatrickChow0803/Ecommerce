@@ -2,4 +2,7 @@
     <string name="app_name">PatsEcommerce</string>
     <string name="availability">See if it\'s available</string>
     <string name="product_details">Product Details</string>
+
+    <string name="open_drawer">Open</string>
+    <string name="close_drawer">Close</string>
 </resources>
