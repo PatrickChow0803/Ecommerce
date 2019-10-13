@@ -2,9 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/clothes_shirt"
+            android:id="@+id/clothes_shirts"
             android:title="Shirts"
             android:checkable="true"/>
+
+        <item
+            android:id="@+id/clothes_jeans"
+            android:title="Jeans"
+            android:checkable="true"/>
+
         <item
             android:id="@+id/cloths_pants"
             android:title="Pants"

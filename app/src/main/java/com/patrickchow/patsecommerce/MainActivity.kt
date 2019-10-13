@@ -19,9 +19,8 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         toolbar.title= "Clothing"
 
-        //Makes the burger on the top left of toolbar
-        val toggle = ActionBarDrawerToggle(this, drawer_layout,
-            toolbar, R.string.open_drawer, R.string.close_drawer)
+        // Makes the burger on the top left of toolbar
+        val toggle = ActionBarDrawerToggle(this, drawer_layout, toolbar, R.string.open_drawer, R.string.close_drawer)
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
 
@@ -29,18 +28,26 @@ class MainActivity : AppCompatActivity() {
         nav_view.setNavigationItemSelectedListener {
             it.isChecked = true
             when(it.itemId){
-                R.id.clothes_shirt -> {
+                R.id.clothes_shirts -> {
                     Toast.makeText(this, "Shirts", Toast.LENGTH_SHORT).show()
                 }
+
+                R.id.clothes_jeans ->{
+                    supportFragmentManager.beginTransaction().replace(R.id.frame_layout_fragment, JeansFragment()).commit()
+                    Toast.makeText(this, "Jeans", Toast.LENGTH_SHORT).show()
+                }
+
                 R.id.cloths_pants -> {
                     Toast.makeText(this, "Pants", Toast.LENGTH_SHORT).show()
                 }
             }
-
             drawer_layout.closeDrawers()
-
             true
         }
+
+//        supportActionBar?.apply {
+//            setDisplayHomeAsUpEnabled(true)
+//        }
 
         val products = arrayListOf<Product>()
 
