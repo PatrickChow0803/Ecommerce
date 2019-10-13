@@ -24,10 +24,17 @@ class MainActivity : AppCompatActivity() {
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
 
+        supportFragmentManager.beginTransaction().replace(R.id.frame_layout_fragment, MainFragment()).commit()
+
         //Sets click listener to the navigation
         nav_view.setNavigationItemSelectedListener {
             it.isChecked = true
             when(it.itemId){
+
+                R.id.clothes_home ->{
+                    supportFragmentManager.beginTransaction().replace(R.id.frame_layout_fragment, MainFragment()).commit()
+                }
+
                 R.id.clothes_shirts -> {
                     Toast.makeText(this, "Shirts", Toast.LENGTH_SHORT).show()
                 }
@@ -49,16 +56,7 @@ class MainActivity : AppCompatActivity() {
 //            setDisplayHomeAsUpEnabled(true)
 //        }
 
-        val products = arrayListOf<Product>()
 
-        for (i in 0..100){
-            products.add(Product("Dress Shirt #$i", "https://images.unsplash.com/photo-1508138221679-760a23a2285b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80", 1.99))
-        }
-
-        rv_items.apply{
-            layoutManager = GridLayoutManager(this@MainActivity, 2)
-            adapter = ProductsAdapter(products)
-        }
     }
 
     // Inflates the menu_sign and place it to the top right
