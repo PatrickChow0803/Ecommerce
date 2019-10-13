@@ -9,7 +9,11 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.patrickchow.patsecommerce.model.Product
+import com.patrickchow.patsecommerce.networking.ServiceMaker
 import kotlinx.android.synthetic.main.activity_main.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
 
@@ -55,6 +59,7 @@ class MainActivity : AppCompatActivity() {
 //        supportActionBar?.apply {
 //            setDisplayHomeAsUpEnabled(true)
 //        }
+
 
 
     }

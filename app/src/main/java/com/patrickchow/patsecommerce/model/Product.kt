@@ -1,7 +1,14 @@
 package com.patrickchow.patsecommerce.model
 
+import com.google.gson.annotations.SerializedName
+
 data class Product(
-    val title: String,
-    val photoUrl: String,
-    val price: Double
+
+    @SerializedName("name")
+    val title : String?,
+
+    @SerializedName("photo_url")
+    val photoUrl: String?,
+
+    val price: Double?
 )
