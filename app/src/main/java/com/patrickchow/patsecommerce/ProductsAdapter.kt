@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.patrickchow.patsecommerce.model.Product
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.product_row.view.*
 
 class ProductsAdapter(private val products: List<Product>) : RecyclerView.Adapter<ProductsAdapter.ViewHolder>(){
 
@@ -17,6 +18,13 @@ class ProductsAdapter(private val products: List<Product>) : RecyclerView.Adapte
         Picasso.get().load(product.photoUrl).into(holder.image)
         holder.title.text = product.title
         holder.price.text = product.price.toString()
+
+        if(product.isOnSale){
+            holder.productOnSale.visibility = View.VISIBLE
+        }
+        else{
+            holder.productOnSale.visibility = View.GONE
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -39,5 +47,6 @@ class ProductsAdapter(private val products: List<Product>) : RecyclerView.Adapte
         val image: ImageView = itemView.findViewById(R.id.iv_product)
         val title: TextView = itemView.findViewById(R.id.tv_title)
         val price: TextView = itemView.findViewById(R.id.tv_price)
+        val productOnSale: ImageView = itemView.iv_sale
     }
 }
