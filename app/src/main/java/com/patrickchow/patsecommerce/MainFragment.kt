@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.patrickchow.patsecommerce.model.Product
 import com.patrickchow.patsecommerce.networking.ServiceMaker
 import kotlinx.android.synthetic.main.fragment_main.*
@@ -25,7 +27,12 @@ class MainFragment:Fragment() {
         val root = inflater.inflate(R.layout.fragment_main, container, false)
 
         var products = listOf<Product>()
+        val categories = listOf("Jeans", "Socks", "Suits", "Skirts", "Dresses", "Jackets", "Hats")
 
+        root.rv_categories.apply {
+            layoutManager = LinearLayoutManager(activity, RecyclerView.HORIZONTAL, false)
+            adapter = CategoriesAdapter(categories)
+        }
 
         val call: Call<List<Product>> = ServiceMaker.create().getClothes()
 
