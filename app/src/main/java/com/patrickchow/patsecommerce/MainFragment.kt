@@ -41,11 +41,12 @@ class MainFragment:Fragment() {
 
                 products = response.body()!!
 
-
+                
                 root.rv_items.apply{
                     layoutManager = GridLayoutManager(activity, 2)
                     adapter = ProductsAdapter(products)
                 }
+                root.progress_bar.visibility = View.GONE
             }
         })
 

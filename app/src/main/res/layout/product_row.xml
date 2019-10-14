@@ -9,6 +9,7 @@
 
     <ImageView
         android:id="@+id/iv_product"
+        android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
